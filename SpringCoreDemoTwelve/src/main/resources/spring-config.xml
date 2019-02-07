@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean class="org.apache.commons.dbcp.BasicDataSource" id="connectionPool">
+		<property name="url" value=""></property>
+		<property name="password" value=""></property>
+		<property name="username" value=""></property>
+		<property name="driverClassName" value=""></property>
+	
+	</bean>
+<!-- 	Method injection: instance -->
+<bean id="connection" scope="prototype" factory-method="getConnection" factory-bean="connectionPool" depends-on="connectionPool"></bean>
+<!-- bds.getConnection() -->
+	<bean class="com.java.Shape" id="shape" factory-method="getInstance"/> <!-- static method -->
+</beans>

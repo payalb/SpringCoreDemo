@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+<!-- If i want to make sure that P1 object is created before p2 -->
+	<bean class="com.java.dto.P2" id="p2" depends-on="p1"/>
+<!-- connectionpool -->
+	<bean class="com.java.dto.P1" id="p1" />
+
+	<bean class="com.java.dto.Employee" id="e1">
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<constructor-arg index="1" value="Payal"></constructor-arg>
+		<constructor-arg index="2" value="67353.23"></constructor-arg>
+		<constructor-arg index="3" ref="address"></constructor-arg> <!-- getBean -->
+	</bean>
+
+	<bean class="com.java.dto.Address" id="address">
+		<property name="hNo" value="10"></property>
+	</bean>
+	<!-- connection -->
+
+
+</beans>

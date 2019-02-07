@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean class="com.java.dto.Employee" scope="singleton" id="e1">
+	<constructor-arg index="0" value="1"></constructor-arg>
+	<constructor-arg index="1" value="Payal"></constructor-arg>
+	<constructor-arg index="2" value="67353.23"></constructor-arg>
+	
+	</bean>
+	
+	<bean class="com.java.dto.Employee" scope="prototype" id="e2">
+	<constructor-arg index="0" value="1"></constructor-arg>
+	<constructor-arg index="1" value="Payal"></constructor-arg>
+	<constructor-arg index="2" value="67353.23"></constructor-arg>
+	
+	</bean>
+</beans>
